@@ -9,7 +9,7 @@ public class WolfController : MonoBehaviour
     private Rigidbody rb;
     public float Speed;
     public float Distance;
-//    private Collider anyCollider = null;
+//    private Collider anyCollider = null;  
 
     private void Start()
     {

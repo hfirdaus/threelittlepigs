@@ -17,14 +17,16 @@ public class FlyBack : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         animator.SetBool("hasWolfEntered", true);
-        if (nuke != null)
+    }
+
+    private void FixedUpdate()
+    {
+        if (nuke != null && animator.GetBool("hasWolfEntered") && animator.GetBool("hasWolfShaken"))
         {
             nuke.transform.position = transform.position;
             nuke.SetActive(true);
         }
-        
     }
-
 
 
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MoveWolf : MonoBehaviour
 {
-    public float speed;
     GameObject wolf;
     Rigidbody wolfRB;
     GameObject strawHouse;
@@ -20,9 +19,10 @@ public class MoveWolf : MonoBehaviour
     void FixedUpdate()
     {
         // if just started and see straw house >>> move wolf to straw house from any location
-        if (justStarted && strawHouse.activeInHierarchy)
+        if (justStarted && strawHouse.activeInHierarchy )
         {
             // move wolf to straw house
+            wolf.transform.position = new Vector3(strawHouse.transform.position.x, strawHouse.transform.position.y, strawHouse.transform.position.z + 1);
             wolf.SetActive(true);
             wolf.GetComponent<WolfController>().Destination = strawHouse.transform.position;
             justStarted = false;
